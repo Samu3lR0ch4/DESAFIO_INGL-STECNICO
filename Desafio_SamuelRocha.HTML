@@ -8,14 +8,37 @@
 </head>
 
 <body>
-  <script>
-    alert("Boas Vindas ao Site!");
+
+    <script>
+        alert("Boas Vindas ao Site!");
+   
 
         let distancia = parseFloat(prompt("Qual a distância percorrida da sua casa até seu trabalho (em km)?"));
-        let consumo = parseFloat(prompt("Qual o consumo médio do seu veículo (em Km/L)?")); 
-     
-        let consumo_Necessario_Litros = distancia / consumo;
+        let consumo = parseFloat(prompt("Qual o consumo médio do seu veículo (em Km/L)?"));
+        let postos = parseInt(prompt("Em quantos postos você pesquisou?"));  
+        let somaValores = 0;
+        let menorValor = 0;
+        console.log(postos)
 
+        
+        for (i = 0; i < postos; i++) {
+            let valor = parseFloat(prompt("Digite o valor encontrado (em R$) no posto " + (i + 1) + ":"));
+            while(isNaN(valor)){
+                alert("Erro, digite apenas números!!");
+                valor = parseFloat(prompt("Digite o valor encontrado (em R$) no posto " + (i + 1) + ":"));            
+            }
+
+            somaValores += valor;
+
+            if (menorValor === 0 || valor < menorValor) {
+                menorValor = valor;
+                console.log(menorValor);
+
+            }
+        }
+
+        let consumo_Necessario_Litros = distancia / consumo;
+      
         function texto(mensagem) {
             document.write(mensagem);
             document.write("<br>");
@@ -24,4 +47,5 @@
     </script>
 
 </body>
+
 </html>
