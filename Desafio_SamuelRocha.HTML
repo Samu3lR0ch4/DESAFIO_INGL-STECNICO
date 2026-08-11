@@ -19,7 +19,6 @@
         let somaValores = 0;
         let menorValor = 0;
         console.log(postos)
-
         
         for (i = 0; i < postos; i++) {
             let valor = parseFloat(prompt("Digite o valor encontrado (em R$) no posto " + (i + 1) + ":"));
@@ -38,12 +37,15 @@
         }
 
         let consumo_Necessario_Litros = distancia / consumo;
-      
+        let media = somaValores / postos;
+        console.log(media);
+
         function texto(mensagem) {
             document.write(mensagem);
             document.write("<br>");
         }
         texto(`O consumo necessário é ${consumo_Necessario_Litros.toFixed(2)} litros`);
+        texto(`A média dos valores pesquisados é R$ ${media.toFixed(2)}`);
     </script>
 
 </body>
