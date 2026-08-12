@@ -11,7 +11,7 @@
 
     <script>
         alert("Boas Vindas ao Site!");
-   
+        //variaveis
 
         let distancia = parseFloat(prompt("Qual a distância percorrida da sua casa até seu trabalho (em km)?"));
         let consumo = parseFloat(prompt("Qual o consumo médio do seu veículo (em Km/L)?"));
@@ -19,7 +19,8 @@
         let somaValores = 0;
         let menorValor = 0;
         console.log(postos)
-        
+
+        // uso do for
         for (i = 0; i < postos; i++) {
             let valor = parseFloat(prompt("Digite o valor encontrado (em R$) no posto " + (i + 1) + ":"));
             while(isNaN(valor)){
@@ -36,16 +37,24 @@
             }
         }
 
-        let consumo_Necessario_Litros = distancia / consumo;
+
         let media = somaValores / postos;
         console.log(media);
+
+        let consumo_Necessario_Litros = distancia / consumo;
+
+        let gasto = 2 * (consumo_Necessario_Litros * menorValor);
+        console.log(gasto);
+
 
         function texto(mensagem) {
             document.write(mensagem);
             document.write("<br>");
         }
         texto(`O consumo necessário é ${consumo_Necessario_Litros.toFixed(2)} litros`);
+        texto(`O menor valor pesquisado é R$ ${menorValor.toFixed(2)}`);
         texto(`A média dos valores pesquisados é R$ ${media.toFixed(2)}`);
+        texto(`O gasto diário (ida e volta) é R$ ${gasto.toFixed(2)}`);
     </script>
 
 </body>
